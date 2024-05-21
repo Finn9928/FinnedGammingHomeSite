@@ -1,28 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Undead Unleashed</title>
-  <!-- stylesheets *********************************-->
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="/UndeadUnleashed/UndUnl.css">
+	<title>Undead Unleashed</title>
+	<!-- stylesheets *********************************-->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="/UndeadUnleashed/UndUnl.css">
 
-  <!-- P5.js & P5.play *****************************-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js" integrity="sha512-bzpp8klYroR6PFgL3RJ+VkvY5hJna7Zd38OA56peUDHSNQpSiN9lDQVnMYtcw7hoAVhbR6mAOdH+ymzg1o+G0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.js" integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://p5play.org/v3/planck.min.js"></script>
-  <script src="https://p5play.org/v3/p5play.js"></script>
+	<!-- P5.js & P5.play *****************************-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js" integrity="sha512-bzpp8klYroR6PFgL3RJ+VkvY5hJna7Zd38OA56peUDHSNQpSiN9lDQVnMYtcw7hoAVhbR6mAOdH+ymzg1o+G0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.js" integrity="sha512-TU9AWtV5uUZPX8dbBAH8NQF1tSdigPRRT82vllAQ1Ke28puiqLA6ZVKxtUGlgrH6yWFnkKy+sE6luNEGH9ar0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://p5play.org/v3/planck.min.js"></script>
+	<script src="https://p5play.org/v3/p5play.js"></script>
 
-  <!-- JQUERY **************************************-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!-- JQUERY **************************************-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!-- firebase start ****************************************-->
+	<!-- Firebase App (core Firebase SDK) is always required & must be listed 1st -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>  
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>  
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script> 
+	<!-- firebase end ******************************************-->
+	 <script src="/index.js" type="module"></script>
+	 <script src="/script.js"  type="module"></script>
+	 <script src="/UndeadUnleashed/UndUnl.js"></script>
 </head>
 
 <!--***************************************************
-  BODY
+	BODY
 ****************************************************-->
 <body>
-  <script src="/UndeadUnleashed/UndUnl.js"></script>
+	<script>
+		console.log("Initialising Firebase");
+		fb_initialise();
+		console.log("Firebase initialise finished");
+		function fb_initialise() {
+			const firebaseConfig = {
+				apiKey: "AIzaSyB4JiiAEOenqUIPicT88_hWI1hENClhRtc",
+				authDomain: "cliff-harfield-12comp.firebaseapp.com",
+				databaseURL: "https://cliff-harfield-12comp-default-rtdb.firebaseio.com",
+				projectId: "cliff-harfield-12comp",
+				storageBucket: "cliff-harfield-12comp.appspot.com",
+				messagingSenderId: "88385343828",
+				appId: "1:88385343828:web:a096abdea61f74dda8b8c1"
+	};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+}
+	</script>
 </body>
 </html>
 <!--***************************************************
-  END OF INDEX.HTML
+	END OF INDEX.HTML
 ****************************************************-->
